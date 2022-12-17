@@ -1,0 +1,27 @@
+<div class="container">
+  <i (click)="favorite(id)" [ngClass]="favorited ? 'bi bi-heart-fill' : 'bi bi-heart'"></i>
+  <div class="image">
+    <img src="{{image}}" alt="foto do produto">
+  </div>
+  <div class="infos">
+    <div class="name">
+      <h4>{{name}}</h4>
+    </div>
+
+    <div class="priceAndCondition">
+      <span>{{price | currency}} | {{condition}}</span>
+    </div>
+    <div class="addToCarAndDetails">
+      <button *ngIf="!inCar" (click)="onPushProduct({
+        'name': name,
+        'id': id,
+        'img': image,
+        'price': price,
+        'unitsInCar': unitsInCar
+      })" class="btn btn-success">Adicionar ao carrinho</button>
+      <button *ngIf="inCar" class="btn btn-danger" (click)="onDeleteProduct(id)">Remover do carrinho</button>
+      <button routerLink="/detalhes/{{id}}" class="btn btn-secondary">Detalhes</button>
+    </div>
+  </div>
+
+</div>

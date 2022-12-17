@@ -1,0 +1,25 @@
+main{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    margin-top: 15%;
+}
+
+app-nav{
+    margin-bottom: 15%;
+    width: 100%;
+}
+
+
+@media (min-width: 800px){
+    main{
+        flex-direction: row;
+        gap: 10px;
+        margin-top: 3%;
+    }
+    app-nav{
+        margin-bottom: 10%;
+    }
+    
+  
+}

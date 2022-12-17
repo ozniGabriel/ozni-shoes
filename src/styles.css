@@ -1,12 +1,54 @@
 /* You can add global styles to this file, and also import other style files */
 @import '../node_modules/bootstrap-icons';
+@import '../node_modules/bootstrap';
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 app-root{
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 50px;
-    width: 100vw;
-    background-color: aliceblue;
+    background-color: rgb(199, 216, 231);
 }
 
+app-filter{
+    height: max-content;
+    padding: 10px;
+    margin-bottom: 8%;
+}
+
+.products{
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding: 0;
+}
+
+.containerFilterAndProducts{
+    display: flex;
+    flex-direction: column;
+}
+
+@media (min-width: 800px){
+    .products{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    app-filter{
+        width: 200px;
+        margin-bottom: 2%;
+    }
+    .containerFilterAndProducts{
+        flex-direction: row;
+        width: 90vw;
+        gap: 35px;
+        
+    }
+    
+}

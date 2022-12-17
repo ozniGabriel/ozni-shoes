@@ -1,0 +1,91 @@
+.container{
+    margin-top: auto;
+    height: max-content;
+    margin-bottom: 95%;
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+}
+
+li{
+    display: flex;
+    gap: 15px;
+    margin-bottom: 18px;
+    align-items: center;
+    background-color: rgb(238, 237, 217);
+    padding: 10px;
+    justify-content: space-between;
+    border-radius: 10px;
+}
+.image{
+    cursor: pointer;
+}
+.image img{
+    width: 100px;
+    height: 80px;
+}
+
+.titleAndPrice{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    cursor: pointer;
+}
+.titleAndPrice h4{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.titleAndPrice h6{
+    font-weight: 500;
+}
+
+.units{
+    text-align: center;
+}
+.units .icons{
+    display: flex;
+    gap: 8px;
+    background-color: aliceblue;
+    padding: 8px;
+}
+.units .bi{
+    cursor: pointer;
+}
+.info span{
+    font-size: 12px;
+}
+
+.checkout{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+    margin-top: 40px;
+}
+
+.total{
+    font-weight: 500;
+}
+
+.opaco{
+    opacity: 0.5;
+}
+
+.buttonOpaco{
+    opacity: 0.5;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.visivel{
+    opacity: 1;
+}
+
+@media (min-width: 800px){
+    li{
+        width: 500px;
+    }
+}

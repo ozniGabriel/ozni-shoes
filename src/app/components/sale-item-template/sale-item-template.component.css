@@ -1,0 +1,65 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    justify-content: space-around;
+    background-color: rgb(255, 253, 253);
+    border-radius: 15px;
+}
+
+.image img{
+    width: 100%;
+    height: 140px;
+}
+
+.name h4{
+    font-size: 18px;
+}
+
+.priceAndCondition span{
+    font-size: 13px;
+}
+.infos{
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.addToCarAndDetails{
+    display: flex;
+    gap: 5px;
+}
+
+.addToCarAndDetails button{
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.bi{
+    font-size: 30px;
+    cursor: pointer;
+    position: relative;
+    padding: 20px;
+    width: 60px;
+}
+
+
+.bi-heart-fill{
+    color: red;
+}
+
+@media (min-width: 800px){
+    .container{
+        width: 250px;
+    }
+
+    .addToCarAndDetails button{
+        font-size: 10px;
+    }
+
+    .bi{
+        font-size: 20px;
+    }
+}

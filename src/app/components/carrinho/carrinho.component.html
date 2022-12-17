@@ -1,0 +1,40 @@
+<div class="container">
+    <ul *ngIf="carro.length > 0">
+        <li *ngFor="let produto of carro" [ngClass]="
+        produto.unitsInCar == 0 ? 'opaco' : 'visivel'">
+            <div class="image" routerLink="/detalhes/{{produto.id}}">
+                <img src="{{produto.img}}" alt="">
+            </div>
+            <div class="titleAndPrice" routerLink="/detalhes/{{produto.id}}">
+                <div>
+                    <h4>{{produto.name}}</h4>
+                </div>
+                <div>
+                    <h6>{{produto.price | currency}}</h6>
+                </div>
+            </div>
+            <div class="units">
+                <div class="icons">
+                <i (click)="onRemoveOneUnit(produto.id); sumTotal(carro)" class="bi bi-dash-circle-fill"></i>
+                <span> {{produto.unitsInCar}} </span>
+                <i (click)="onAddOneUnit(produto.id); sumTotal(carro)" class="bi bi-plus-circle-fill"></i>
+                </div>
+                <div class="info">
+                    <span>Unidades</span>
+                </div>
+                <span></span>
+            </div>
+            
+        </li>
+    </ul>
+    <div class="checkout" *ngIf="carro.length > 0">
+        <div class="total">Total: {{total | currency}}</div>
+        <div class="buy">
+            <button [disabled]="total == 0"  class="btn btn-success">Finalizar compra</button>
+        </div>
+    </div>
+    <div class="emptyCar" *ngIf="carro.length == 0">
+        <h4>Não há produtos em seu carrinho. Vá as compras!</h4>
+    </div>
+    
+</div>

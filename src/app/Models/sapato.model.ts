@@ -4,5 +4,10 @@ export class Sapato{
     price!: number ;
     description!: string ;
     seller!: string;
-    like!: boolean;
+    like!: boolean;;
+    category!: string;
+    img!: string;
+    inCar!: boolean;
+    condition!: string;
+    unitsInCar!: number;
 }

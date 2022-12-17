@@ -1,22 +1,35 @@
-
-<nav>
-  <ul>
-    <li>
-      <a href="#">Meu E-Comerce</a>
+<nav [ngClass]="openMenu ? 'openedMenu' : 'closedMenu'">
+  <div routerLink="/home" *ngIf="!openMenu">Ozni Shoes</div>
+  <div class="menuHamburguer" (click)="openMenuMobile()">
+    <i class="bi bi-list" *ngIf="!openMenu"></i>
+    <i class="bi bi-x-circle" *ngIf="openMenu" style="color: ALICEBLUE"></i>
+  </div>
+  <ul *ngIf="(openMenu) || (!isMobile)" [ngClass]="isMobile ? 'itemsMenuMobile' : 'itemsMenuDesktop'">
+    <li routerLink="/home" (click)="openMenuMobile()">
+      <a>Home</a>
     </li>
-    <li>
-      <a href="#">Nacionais</a>
+    <li routerLink="/masculinos" (click)="openMenuMobile()">
+      <a>Masculinos</a>
     </li>
-    <li>
-      <a href="#">
-        Importados
+    <li routerLink="/femininos" (click)="openMenuMobile()">
+      <a>
+        Femininos
       </a>
     </li>
-    <li>
-      <a href="#">
+    <li routerLink="/promocoes" (click)="openMenuMobile()">
+      <a>
         Promoções
       </a>
     </li>
+    <li>
+      <button routerLink="/carrinho" (click)="openMenuMobile()" type="button" class="btn btn-secondary position-relative">
+        <i class="bi bi-cart4"></i>
+        <span *ngIf="itemsNoCarro > 0"
+          class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+          {{itemsNoCarro}}
+        </span>
+      </button>
+    </li>
   </ul>
-      
+  
 </nav>

@@ -1,0 +1,42 @@
+<div class="container">
+    <div class="description">
+        <h4>{{product.name}}</h4>
+        <span>{{product.description}}</span>
+        <span>Vendido por: {{product.seller}}</span>
+        <div class="icons">
+            <i (click)="favorite(product.id)" [ngClass]="product.like? 'bi bi-heart-fill' : 'bi bi-heart'"></i>
+            <i class="bi bi-share">Compartilhar</i>
+            
+        </div>
+    </div>
+    <div class="image">
+        <img src="{{product.img}}" alt="foto do produto">
+       
+    </div>
+    <div class="priceSizeBuy">
+        <div class="price">
+            <h5>{{product.price | currency}}</h5>
+            <h6>Em até 3x sem juros</h6>
+        </div>
+        <div class="size">
+            <span>Escolha seu tamanho:</span>
+            <select name="" id="">
+                <option value="36">36</option>
+                <option value="37">37</option>
+                <option value="38">38</option>
+                <option value="39">39</option>
+                <option value="40">40</option>
+            </select>
+        </div>
+        <div class="cep">
+            <span>Calcular Frete:</span>
+            <form>
+                <input placeholder="Digite seu CEP" type="text" name="cep" id="">
+                <button class="btn btn-primary">OK</button>
+            </form>
+        </div>
+        <div class="buy">
+            <button class="btn btn-success">Adicionar ao Carrinho</button>
+        </div>
+    </div>
+</div>

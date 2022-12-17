@@ -1,0 +1,19 @@
+<div class="containerFilterAndProducts">
+<app-filter></app-filter>
+<ul class="products">
+  <li *ngFor="let produto of sapatos ">
+    <app-sale-item-template 
+    [unitsInCar]="produto.unitsInCar" 
+    [condition]="produto.condition"
+    [favorited]="produto.like"
+    [image]="produto.img" 
+    [name]="produto.name" 
+    [description]="produto.description"
+    [price]="produto.price" 
+    [seller]="produto.seller" 
+    [inCar]="produto.inCar"
+    [id]="produto.id">
+    </app-sale-item-template>
+  </li>
+</ul>
+</div>
