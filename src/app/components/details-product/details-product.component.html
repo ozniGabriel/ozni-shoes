@@ -35,8 +35,17 @@
                 <button class="btn btn-primary">OK</button>
             </form>
         </div>
+    
         <div class="buy">
-            <button class="btn btn-success">Adicionar ao Carrinho</button>
+            <button *ngIf="!product.inCar" (click)="onPushProduct({
+                'name': product.name,
+                'id': product.id,
+                'img': product.image,
+                'price': product.price,
+                'unitsInCar': product.unitsInCar
+              })" class="btn btn-success">Adicionar ao carrinho</button>
+              <button *ngIf="product.inCar" class="btn btn-danger" (click)="onDeleteProduct(product.id)">Remover do carrinho</button>
+
         </div>
     </div>
 </div>
